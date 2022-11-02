@@ -24,7 +24,7 @@ function App() {
       <Router>
         <SideBar>
           <Routes>
-            <Route path="/Projects-media" element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="/clientportal" element={<ClientPortal />} />
             <Route path="/coursetracker" element={<CourseTracker />} />
             <Route path="/portfolio" element={<Portfolio />} />
