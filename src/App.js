@@ -16,6 +16,7 @@ import SignalClone from "./pages/SignalClone";
 import SpotifyClone from "./pages/SpotifyClone";
 import EcommerceAdmin from "./pages/EcommerceAdmin";
 import EcommerceClient from "./pages/EcommerceClient";
+import DisneyClone from "./pages/DisneyClone";
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
             <Route path="/spotifyclone" element={<SpotifyClone />} />
             <Route path="/ecommerce/admin" element={<EcommerceAdmin />} />
             <Route path="/ecommerce/client" element={<EcommerceClient />} />
+            <Route path="/disneyclone" element={<DisneyClone />} />
           </Routes>
         </SideBar>
       </Router>

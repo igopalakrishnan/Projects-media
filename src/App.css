@@ -127,7 +127,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px 10px;
+  padding: 10px 10px;
 }
 .logo {
   font-size: 18px;
@@ -142,16 +142,16 @@ main {
 
 
 .routes {
-  margin-top: 15px;
+  margin-top: 5px;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 0px;
 }
 .link {
   display: flex;
   color: white;
   gap: 10px;
-  padding: 13px 10px;
+  padding: 10px 10px;
   border-right: 4px solid transparent;
   transition: 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
   text-decoration: none;

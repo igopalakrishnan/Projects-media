@@ -4,7 +4,7 @@ import { MdCastForEducation } from "react-icons/md";
 import { BiWorld } from "react-icons/bi";
 import { HiNewspaper } from "react-icons/hi";
 import { SiDeliveroo } from "react-icons/si";
-import { RiAdminFill } from "react-icons/ri";
+import { RiAdminFill, RiMovie2Fill } from "react-icons/ri";
 import { AiFillInstagram } from "react-icons/ai";
 import { BsSignal, BsBookHalf, BsFillChatDotsFill, BsFillCartFill } from "react-icons/bs";
 import { useState } from "react";
@@ -74,6 +74,11 @@ const routes = [
         icon: <FaSpotify />,
     },
     {
+        path: "/disneyclone",
+        name: "Disney Clone",
+        icon: <RiMovie2Fill />,
+    },
+    {
         path: "/ecommerce",
         name: "E-commerce",
         icon: <BsFillCartFill />,
@@ -94,9 +99,7 @@ const routes = [
 ];
 
 const SideBar = ({ children }) => {
-    const [isOpen, setIsOpen] = useState(false);
-    const [show, setShow] = useState(true);
-
+    const [isOpen, setIsOpen] = useState(true);
     const toggle = () => setIsOpen(!isOpen);
 
     const showAnimation = {
@@ -121,7 +124,7 @@ const SideBar = ({ children }) => {
             <div className="main-container">
                 <motion.div
                     animate={{
-                        width: !isOpen ? "200px" : "50px",
+                        width: isOpen ? "200px" : "45px",
 
                         transition: {
                             duration: 0.5,
@@ -130,11 +133,10 @@ const SideBar = ({ children }) => {
                         },
                     }}
                     className={`sidebar `}
-                    onClick={() => setShow(show)}
                 >
                     <div className="top_section">
                         <AnimatePresence>
-                            {!isOpen && (
+                            {isOpen && (
                                 <motion.h1
                                     variants={showAnimation}
                                     initial="hidden"
@@ -142,7 +144,9 @@ const SideBar = ({ children }) => {
                                     exit="hidden"
                                     className="logo"
                                 >
-                                    <img src={Logo} style={{ width: "20%" }} />
+                                    <img src={Logo} style={{
+                                        width: 40
+                                    }}/>
                                 </motion.h1>
                             )}
                         </AnimatePresence>
@@ -159,7 +163,7 @@ const SideBar = ({ children }) => {
                                         setIsOpen={setIsOpen}
                                         route={route}
                                         showAnimation={showAnimation}
-                                        isOpen={!isOpen}
+                                        isOpen={isOpen}
                                     />
                                 );
                             }
@@ -173,7 +177,7 @@ const SideBar = ({ children }) => {
                                 >
                                     <div className="icon">{route.icon}</div>
                                     <AnimatePresence>
-                                        {!isOpen && (
+                                        {isOpen && (
                                             <motion.div
                                                 variants={showAnimation}
                                                 initial="hidden"
